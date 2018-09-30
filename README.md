@@ -15,3 +15,8 @@ Please follow below steps.
 10. try to register and login.
 
 Happy Coding :)
+
+<img src="LRE%20images/welcome_page.jpeg" width="240" height="400"/>
+<img src="LRE%20images/login.jpeg" width="240" height="400"/>
+<img src="LRE%20images/register.jpeg" width="240" height="400"/>
+<img src="LRE%20images/home_page.jpeg" width="240" height="400"/>
