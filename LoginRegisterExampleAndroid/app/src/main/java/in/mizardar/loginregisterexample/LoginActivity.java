@@ -129,29 +129,8 @@ public class LoginActivity extends AppCompatActivity {
                             "Institute":"Sinhgad"
                         }
                         */
-
-                        // get user data from response
-                        int ID =responseObject.getInt("ID");
-                        String firstName = responseObject.getString("FirstName");
-                        String lastName = responseObject.getString("LastName");
-                        String username = responseObject.getString("Username");
-                        String institute = responseObject.getString("Institute");
-
-                        //create a bundle to pass the data to home page
-                        Bundle bundle = new Bundle();
-                        //put all values inside the bundle
-                        bundle.putInt("ID",ID);
-                        bundle.putString("firstName",firstName);
-                        bundle.putString("lastName",lastName);
-                        bundle.putString("username",username);
-                        bundle.putString("institute",institute);
-
-                        Intent homeIntent = new Intent(LoginActivity.this, HomePageActivity.class);
-                        //put the bundle inside intent
-                        homeIntent.putExtra("bundle",bundle);
-
-                        startActivity(homeIntent);
-                        finish();
+						parse_response(responseObject);
+                        
                     }
 
 
@@ -181,6 +160,31 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+	
+	private void parse_response(JSONObject responseObject) {
+		// get user data from response
+        int ID =responseObject.getInt("ID");
+        String firstName = responseObject.getString("FirstName");
+        String lastName = responseObject.getString("LastName");
+        String username = responseObject.getString("Username");
+        String institute = responseObject.getString("Institute");
+
+         //create a bundle to pass the data to home page
+        Bundle bundle = new Bundle();
+        //put all values inside the bundle
+        bundle.putInt("ID",ID);
+        bundle.putString("firstName",firstName);
+        bundle.putString("lastName",lastName);
+        bundle.putString("username",username);
+        bundle.putString("institute",institute);
+
+        Intent homeIntent = new Intent(LoginActivity.this, HomePageActivity.class);
+        //put the bundle inside intent
+        homeIntent.putExtra("bundle",bundle);
+
+        startActivity(homeIntent);
+        finish();
+	}
 
     protected void performRegister() {
 
